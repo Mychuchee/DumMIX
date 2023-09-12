@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Necakco | Website</title>
+    </head>
+    <body>
+        <div class="content">
+            <div class="audio-icon">
+                <button id="button-play-music">
+                    <box-icon name="volume-full" flip="vertical" animation="tada" size="lg" color="#7CD2BF"></box-icon>
+                    <audio
+                        id="audio"
+                        src="https://cdn.discordapp.com/attachments/1143551875682156645/1149227426359033977/y2mate.com_-_The_Perfect_Girl_Instrumental_Slowed.mp3"
+                    ></audio>
+                </button>
+            </div>
+            <h1 class="title">
+                Necakco - real
+                <div class="aurora">
+                    <div class="aurora__item"></div>
+                    <div class="aurora__item"></div>
+                    <div class="aurora__item"></div>
+                    <div class="aurora__item"></div>
+                </div>
+            </h1>
+            <p class="subtitle">Random Guy.</p>
+            <a href="https://github.com/frenda-r">
+                <button class="button1">click here</button>
+            </a>
+        </div>
+        <style>
+            .button1 {
+                --glow-color: rgb(217, 176, 255);
+                --glow-spread-color: rgba(191, 123, 255, 0.781);
+                --enhanced-glow-color: rgb(231, 206, 255);
+                --btn-color: rgb(100, 61, 136);
+                border: 0.25em solid var(--glow-color);
+                padding: 1em 3em;
+                color: var(--glow-color);
+                font-size: 15px;
+                font-weight: bold;
+                background-color: var(--btn-color);
+                border-radius: 1em;
+                outline: none;
+                box-shadow: 0 0 1em 0.25em var(--glow-color), 0 0 4em 1em var(--glow-spread-color),
+                    inset 0 0 0.75em 0.25em var(--glow-color);
+                text-shadow: 0 0 0.5em var(--glow-color);
+                position: relative;
+                transition: all 0.3s;
+            }
+
+            .button1::after {
+                pointer-events: none;
+                content: "";
+                position: absolute;
+                top: 120%;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background-color: var(--glow-spread-color);
+                filter: blur(2em);
+                opacity: 0.7;
+                transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
+            }
+
+            .button1:hover {
+                color: var(--btn-color);
+                background-color: var(--glow-color);
+                box-shadow: 0 0 1em 0.25em var(--glow-color), 0 0 4em 2em var(--glow-spread-color),
+                    inset 0 0 0.75em 0.25em var(--glow-color);
+            }
+
+            .button1:active {
+                box-shadow: 0 0 0.6em 0.25em var(--glow-color), 0 0 2.5em 2em var(--glow-spread-color),
+                    inset 0 0 0.5em 0.25em var(--glow-color);
+            }
+            @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap");
+
+            :root {
+                --bg: #000000;
+                --clr-1: #00c2ff;
+                --clr-2: #33ff8c;
+                --clr-3: #ffc640;
+                --clr-4: #e54cff;
+
+                --blur: 1rem;
+                --fs: clamp(3rem, 8vw, 7rem);
+                --ls: clamp(-1.75px, -0.25vw, -3.5px);
+            }
+
+            body {
+                min-height: 100vh;
+                display: grid;
+                place-items: center;
+                background-color: var(--bg);
+                color: #fff;
+                font-family: "Inter", "DM Sans", Arial, sans-serif;
+            }
+
+            *,
+            *::before,
+            *::after {
+                font-family: inherit;
+                box-sizing: border-box;
+            }
+
+            .content {
+                text-align: center;
+            }
+
+            .title {
+                font-size: var(--fs);
+                font-weight: 800;
+                letter-spacing: var(--ls);
+                position: relative;
+                overflow: hidden;
+                background: var(--bg);
+                margin: 0;
+            }
+
+            .subtitle {
+                font-size: 21px;
+            }
+
+            .aurora {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 2;
+                mix-blend-mode: darken;
+                pointer-events: none;
+            }
+
+            .aurora__item {
+                overflow: hidden;
+                position: absolute;
+                width: 60vw;
+                height: 60vw;
+                background-color: var(--clr-1);
+                border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+                filter: blur(var(--blur));
+                mix-blend-mode: overlay;
+            }
+
+            .aurora__item:nth-of-type(1) {
+                top: -50%;
+                animation: aurora-border 6s ease-in-out infinite, aurora-1 12s ease-in-out infinite alternate;
+            }
+
+            .aurora__item:nth-of-type(2) {
+                background-color: var(--clr-3);
+                right: 0;
+                top: 0;
+                animation: aurora-border 6s ease-in-out infinite, aurora-2 12s ease-in-out infinite alternate;
+            }
+
+            .aurora__item:nth-of-type(3) {
+                background-color: var(--clr-2);
+                left: 0;
+                bottom: 0;
+                animation: aurora-border 6s ease-in-out infinite, aurora-3 8s ease-in-out infinite alternate;
+            }
+
+            .aurora__item:nth-of-type(4) {
+                background-color: var(--clr-4);
+                right: 0;
+                bottom: -50%;
+                animation: aurora-border 6s ease-in-out infinite, aurora-4 24s ease-in-out infinite alternate;
+            }
+
+            @keyframes aurora-1 {
+                0% {
+                    top: 0;
+                    right: 0;
+                }
+
+                50% {
+                    top: 100%;
+                    right: 75%;
+                }
+
+                75% {
+                    top: 100%;
+                    right: 25%;
+                }
+
+                100% {
+                    top: 0;
+                    right: 0;
+                }
+            }
+
+            @keyframes aurora-2 {
+                0% {
+                    top: -50%;
+                    left: 0%;
+                }
+
+                60% {
+                    top: 100%;
+                    left: 75%;
+                }
+
+                85% {
+                    top: 100%;
+                    left: 25%;
+                }
+
+                100% {
+                    top: -50%;
+                    left: 0%;
+                }
+            }
+
+            @keyframes aurora-3 {
+                0% {
+                    bottom: 0;
+                    left: 0;
+                }
+
+                40% {
+                    bottom: 100%;
+                    left: 75%;
+                }
+
+                65% {
+                    bottom: 40%;
+                    left: 50%;
+                }
+
+                100% {
+                    bottom: 0;
+                    left: 0;
+                }
+            }
+
+            @keyframes aurora-4 {
+                0% {
+                    bottom: -50%;
+                    right: 0;
+                }
+
+                50% {
+                    bottom: 0%;
+                    right: 40%;
+                }
+
+                90% {
+                    bottom: 50%;
+                    right: 25%;
+                }
+
+                100% {
+                    bottom: -50%;
+                    right: 0;
+                }
+            }
+
+            @keyframes aurora-border {
+                0% {
+                    border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+                }
+
+                25% {
+                    border-radius: 47% 29% 39% 49% / 61% 19% 66% 26%;
+                }
+
+                50% {
+                    border-radius: 57% 23% 47% 72% / 63% 17% 66% 33%;
+                }
+
+                75% {
+                    border-radius: 28% 49% 29% 100% / 93% 20% 64% 25%;
+                }
+
+                100% {
+                    border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+                }
+            }
+
+            p {
+                margin-bottom: 20px;
+            }
+            .audio-icon {
+                position: fixed;
+                bottom: 20px;
+                width: 55px;
+                height: 55px;
+                right: 20px;
+                z-index: 9999;
+                transition: all 0.5s ease-in-out;
+                border-radius: 10px;
+                align-content: center;
+                box-shadow: 0 0 10px 5px #c1c1c120;
+                background: rgba(0, 0, 0, 0.5);
+                filter: drop-shadow(0px 0px 10px #272733);
+            }
+            #button-play-music {
+                background-color: transparent;
+                border: 0px;
+                width: 100%;
+                height: 100%;
+                align-items: center;
+            }
+            box-icon {
+                transition: linear 0.25s;
+            }
+        </style>
+        <script>
+            const audio = document.getElementById("audio");
+            const audioButton = document.getElementById("button-play-music");
+            const audioIcon = audioButton.querySelector("box-icon");
+
+            audioButton.addEventListener("click", function () {
+                if (audio.paused) {
+                    audio.play();
+                    audioIcon.setAttribute("name", "volume-mute");
+                } else {
+                    audio.pause();
+                    audioIcon.setAttribute("name", "volume-full");
+                }
+            });
+            // Create context and nodes
+           
+        </script>
+        <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    </body>
+</html>
